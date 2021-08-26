@@ -1,6 +1,18 @@
-DROP TABLE IF EXISTS test;
+DROP DATABASE IF EXISTS pma_jobs_dev;
+CREATE DATABASE pma_jobs_dev;
+\c pma_jobs_dev;
 
-CREATE TABLE test (
+
+
+-- DROP TABLE IF EXISTS pma_jobs;
+
+
+CREATE TABLE pma_jobs (
     id SERIAL PRIMARY KEY, 
-    name TEXT
+    job_name TEXT NOT NULL,
+    description TEXT NOT NULL, 
+    location TEXT NOT NULL, 
+    number_of_hours INT,
+    status TEXT NOT NULL,
+    completed BOOLEAN NOT NULL DEFAULT FALSE
 );

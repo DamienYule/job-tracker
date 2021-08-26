@@ -1,28 +1,56 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { apiURL } from "./util/apiURL.js";
-const API = apiURL();
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import JobsProvider from "./Contexts/JobsContext";
+// import "./App.css"
+//Pages
+ import HomeLogin from './Components/HomeLogin'
+import FourOFour from './Components/FourOFour'
+//Components 
 
-function App() {
-  const [days, setDays] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/test`)
-      .then(
-        (response) => setDays(response.data),
-        (error) => console.log("get", error)
-      )
-      .catch((c) => console.warn("catch", c));
-  }, []);
+import NavBar from './Components/NavBar'
+import JobsList from "./Components/JobsList";
+import JobDetails from "./Components/JobDetails";
+import CreateJob from "./Components/CreateJob";
+// import PackagesNewForm from "./components/PackagesNewForm";
+// import PackagesEditForm from "./components/PackagesEditForm";
+// import PackageDetails from "./components/PackageDetails";
+// import ReviewNewForm from "./components/ReviewNewForm";
+
+const App = () => {
   return (
     <div>
-      <ul>
-        {days.map((day) => (
-          <li key={day.name}>{day.name}</li>
-        ))}
-      </ul>
+      <JobsProvider>
+      <Router>
+        <NavBar />
+        <main>
+          <Switch>
+            <Route exact path="/">
+              <HomeLogin />
+            </Route>
+            <Route exact path="/jobs">
+              <JobsList />
+              <JobDetails/>
+            </Route>
+            <Route path="/jobs/new">
+              < CreateJob/>
+            </Route>
+            {/* <Route exact path="/travelpackages/:id">
+              <PackageDetails />
+            </Route>
+            <Route exact path="/travelpackages/:id/edit">
+              <PackagesEditForm />
+            </Route>
+            <Route exact path="/travelpackages/:id/travelreview/new">
+              <ReviewNewForm/>
+            </Route> */}
+            <Route path="*">
+              <FourOFour />
+            </Route> 
+          </Switch>
+        </main>
+      </Router>
+      </JobsProvider>
     </div>
   );
-}
+};
 
 export default App;

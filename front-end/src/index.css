@@ -1,13 +1,108 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 1vw;
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(254, 252, 249);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+h2{
+  color:rgb(171, 169, 169);
+}
+navTop {
+  background-color: rgba(23, 109, 40, 0.338);
+  height: 8%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 2px rgba(17, 82, 30, 0.482) ;
+}
+navSide .list-group{
+  width: 15vw;
+  position:absolute;
+  height: 87vh;
+  background-color:#FEFEFE;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 0px;
+  border-right:solid 2px #DFDFDF;
+}
+
+.logoPMA{
+  text-decoration: none;
+  color: aliceblue;
+  font-family:cursive;
+  font-size: 4vw;
+  margin-left: 1vw;
+}
+.initials {
+  text-decoration: none;
+  color: aliceblue;
+  border: solid 2px aliceblue;
+  border-radius: 30px;
+  margin-right: 1vw;
+  font-family: fantasy;
+  font-size: 1.5vw;
+  padding-top: 0.5vw;
+  padding-left: 0.3vw;
+  font-weight: bold;
+  margin-top: 1.1vw;
+  margin-bottom: 1.1vw;
+  width: 3vw;
+}
+/* .margin-on-primary-table{
+  padding: 200px;
+} */
+.jobsSection{
+  margin-left: 20vw;
+  margin-top: 2vw;
+  margin-top: 1vw;
+}
+.jobsList {
+  position: absolute;
+  margin-left: -3vw;
+  margin-top: 1vh  ;
+  width: 39vw;
+  height: 75vh;
+  border: #DFDFDF solid 2px;
+  border-radius: 10px;
+  /* border: solid 3px rgba(23, 109, 40, 0.338);
+  border-radius: 5px; */
+ 
+  overflow-y: scroll;
+}
+.id-number{
+  position: fixed;
+  left:60vw;
+  top: 16vh;
+}
+.showSection{
+  width: 40%;
+  height: 75vh;
+  border: #DFDFDF solid 2px;
+  border-radius: 10px;
+  position: fixed;
+  top: 11.8vw;
+  right:2vw;
+  background-color: white;
+}
+.showNav{
+  position:fixed;
+  top: 11.9vw;
+  right:2.17vw;
+  width:39.7%;
+}
+.status-h4{
+  padding-left: 1vw;
+  padding-top: .5vw;
+}
+.create{
+  padding: 20px;
 }
