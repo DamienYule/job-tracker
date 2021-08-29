@@ -21,7 +21,7 @@ const NavBar = () => {
                 <div className="list-group">
                     <a href="#"  onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">All Jobs</a>
                     <a  href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</a>
-                    <a href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Asighned to me</a>
+                    <a href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Assigned to me</a>
                     <a href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">In Progress</a>
                     <a href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Completed</a>
                     <a href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Notes</a>

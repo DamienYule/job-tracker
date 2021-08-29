@@ -12,16 +12,30 @@ function CreateJob() {
         description: "",
         location: "",
         number_of_hours: 0,
-        status: "",
+        status: "Not in progress",
         completed: false
     });
-    console.log(input)
+
     const handleChange = (e) => {
         setInput({ ...input, [e.target.id]: e.target.value });
     };
-    const handleSubmit = () => {
-
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        await addJob(input)
+        setDisplayNav("All Jobs")
     }
+    const addJob = async (input) => {
+        try {
+           const res =  await axios.post(`${API}/jobs`, input);
+            if (res.data.success){
+                console.log(res.data.payload)
+                setJobs( oldArrayOfJobs => [...oldArrayOfJobs, res.data.payload]);
+                
+              }
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     return (
         <div className="create">
@@ -73,42 +87,18 @@ function CreateJob() {
                 </div>
                 <div className="input-group mb-3">
                     <span
+                        htmlFor="number_of_hours"
                         className="input-group-text"
                         id="inputGroup-sizing-default">Number of hours</span>
                     <input
+                        id="number_of_hours"
+                        value={input.number_of_hours}
+                        onChange={handleChange}
                         type="number"
                         className="form-control"
                         aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default" />
                 </div>
-                <div className="input-group mb-3">
-                    <span htmlFor="package_name" className="input-group-text" id="inputGroup-sizing-default">Status</span>
-                    <input
-                        id="status"
-                        value={input.status}
-                        type="text"
-                        onChange={handleChange}
-                        required
-                        className="form-control"
-                        aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default" />
-
-                </div>
-                {/* <div classNameName="input-group-text mb-3">
-                    <label htmlFor="package_name" classNameName="form-label">
-                        Package Name
-                    </label>
-                    <input
-                        id="package_name"
-                        value={input.package_name}
-                        type="text"
-                        classNameName="form-control"
-                        onChange={handleChange}
-                        aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default"
-                        required
-                    />
-                </div> */}
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>

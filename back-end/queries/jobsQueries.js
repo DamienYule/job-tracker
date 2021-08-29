@@ -42,7 +42,7 @@ const updateJob = async (id, job) => {
     job;
   try {
     const updatedJob = await db.one(
-      `UPDATE pma_jobs SET package_name=$1, description=$2, img_url=$3, location=$4, in_stock=$5, price=$6 WHERE id=$7 RETURNING *`,
+      `UPDATE pma_jobs SET job_name=$1, description=$2, location=$3, number_of_hours=$4, status=$5, completed=$6 WHERE id=$7 RETURNING *`,
       [job_name, description, location, number_of_hours,status,completed, id]
     );
     return { success: true, payload: updatedJob };
