@@ -119,6 +119,12 @@ navSide .list-group{
 .id-number{
   margin-left: 2vw;
 }
+.list-group-item{
+  cursor: grab;
+}
+.list-group-item :active{
+  cursor: grabbing;
+}
 .Completed {
  background-color: #1a875479;
 }
