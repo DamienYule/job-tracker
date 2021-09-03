@@ -31,8 +31,6 @@ const JobsList = () => {
                 {displayNav === "Create Job" && < CreateJob />}
                 {displayNav === "All Jobs" && <AllJobs />}
                 {displayNav === "Completed" && <CompletedJobs/>}
-
-
             </div>
         </section>
 

@@ -1,39 +1,40 @@
 const express = require("express");
 const jobs = express.Router();
+const jobMessagesController = require("./jobMessagesController")
 const {
-    fetchAllJobs,
-    fetchJob,
-    newJob,
-    updateJob, deleteJob
-  } = require("../queries/jobsQueries");
-  
+  fetchAllJobs,
+  fetchJob,
+  newJob,
+  updateJob, deleteJob
+} = require("../queries/jobsQueries");
 
+jobs.use('/:jobId/comments', jobMessagesController)
 jobs.get("/", async (req, res) => {
-    const allJobs = await fetchAllJobs();
-    res.json(allJobs);
-  });
-  
-  jobs.get("/:id", async (req, res) => {
-    const { id } = req.params;
-    const job = await fetchJob(id);
-    res.json(job);
-  });
-  
-  jobs.post("/", async (req, res) => {
-    const createdJob = await newJob(req.body);
-    res.json(createdJob);
-  });
-  
-  jobs.put("/:id", async (req, res) => {
-    const { id } = req.params;
-    const updatedJob = await updateJob(id, req.body);
-    res.json(updatedJob);
-  });
-  
-  jobs.delete("/:id", async (req, res) => {
-    const { id } = req.params;
-    const deletedJob = await deleteJob(id)
-    res.json(deletedJob)
-  });
+  const allJobs = await fetchAllJobs();
+  res.json(allJobs);
+});
+
+jobs.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const job = await fetchJob(id);
+  res.json(job);
+});
+
+jobs.post("/", async (req, res) => {
+  const createdJob = await newJob(req.body);
+  res.json(createdJob);
+});
+
+jobs.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  const updatedJob = await updateJob(id, req.body);
+  res.json(updatedJob);
+});
+
+jobs.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  const deletedJob = await deleteJob(id)
+  res.json(deletedJob)
+});
 
 module.exports = jobs;

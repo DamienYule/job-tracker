@@ -6,9 +6,19 @@ export const JobsContext = createContext({});
 const JobProvider = ({ children }) => {
     const [jobs, setJobs] = useState([]);
     const [job, setJob] = useState({})
+    const [comments, setComments] = useState([])
     const [displayNav, setDisplayNav] = useState("All Jobs")
+    const [diplayComments, setDisplayComments] = useState("comments")
+    const [comment, setComment] = useState({})
     return (
-        <JobsContext.Provider value={{ jobs, setJobs, job, setJob, displayNav, setDisplayNav }}>
+        <JobsContext.Provider value={{
+            jobs, setJobs,
+            job, setJob,
+            displayNav, setDisplayNav,
+            comments, setComments,
+            diplayComments, setDisplayComments,
+            comment, setComment
+        }}>
             {children}
         </JobsContext.Provider>
     )

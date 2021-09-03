@@ -5,18 +5,22 @@ import { JobsContext } from "../Contexts/JobsContext";
 
 import JobInfo from './JobInfo';
 import JobEdit from './JobEdit';
+import Comments from './Comments';
 
 
 
 function JobDetails() {
     const { job, setJob } = useContext(JobsContext);
+    const { diplayComments, setDisplayComments} = useContext(JobsContext);
     const [display, setDisplay] = useState("Info")
     useEffect(() => {
 
     }, [job])
     const handleDisplay = (e) => {
         setDisplay(e.target.innerHTML)
-
+        if (e.target.innerHTML === "Comments"){
+            setDisplayComments("comments")
+        }
     }
 
     console.log(display)
@@ -35,7 +39,7 @@ function JobDetails() {
                 </nav>
                 <div className="showBox">
                     {display === "Info" && <JobInfo />}
-                    {display === "Comments" && (<p>Comming soon</p>)}
+                    {display === "Comments" && <Comments/>}
                     {display === "Edit" && <JobEdit />}
                 </div>
             </div>

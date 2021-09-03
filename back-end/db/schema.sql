@@ -16,3 +16,12 @@ CREATE TABLE pma_jobs (
     status TEXT NOT NULL,
     completed BOOLEAN NOT NULL DEFAULT FALSE
 );
+CREATE TABLE job_comments(
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    reviewer TEXT NOT NULL,
+    content TEXT NOT NULL,
+    date TEXT NOT NULL,
+    pma_jobs_id INT REFERENCES pma_jobs (id) 
+        ON DELETE CASCADE 
+);

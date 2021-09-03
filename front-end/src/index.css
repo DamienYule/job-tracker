@@ -120,17 +120,28 @@ navSide .list-group{
   margin-left: 2vw;
 }
 .list-group-item{
-  cursor: grab;
+  cursor: pointer;
 }
-.list-group-item :active{
-  cursor: grabbing;
-}
+
 .Completed {
  background-color: #1a875479;
 }
 /* .not{
   background-color: rgb(246, 246, 246);
 } */
-.in{
+.in {
   background-color: #0d6dfd6f;
+}
+.paddingAroundNewCommentButton{
+  margin-bottom: 1vh;
+}
+.hoverList :hover{
+cursor: default;
+}
+.cursorOnButton :hover {
+  cursor: pointer;
+}
+
+.hoverListAllJobs :hover{
+  background-color: rgba(239, 247, 247, 0.674);
 }
