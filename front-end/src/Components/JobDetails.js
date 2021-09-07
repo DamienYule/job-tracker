@@ -12,7 +12,7 @@ import Comments from './Comments';
 function JobDetails() {
     const { job, setJob } = useContext(JobsContext);
     const { diplayComments, setDisplayComments} = useContext(JobsContext);
-    const [display, setDisplay] = useState("Info")
+    const { display, setDisplay} = useContext(JobsContext);
     useEffect(() => {
 
     }, [job])
@@ -29,10 +29,10 @@ function JobDetails() {
             <h2 className="id-number">Job Number: {job.id}</h2>
             <div className="showList">
                 <nav className="showNav">
-                    <div class="list-group list-group-horizontal">
-                        <a onClick={handleDisplay} class="list-group-item list-group-item-action list-group-item-light">Info</a>
-                        <a onClick={handleDisplay} class="list-group-item list-group-item-action list-group-item-light">Comments</a>
-                        <a onClick={handleDisplay} class="list-group-item list-group-item-action list-group-item-light">Edit</a>
+                    <div className="list-group list-group-horizontal">
+                        <a onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Info</a>
+                        <a onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Comments</a>
+                        <a onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Edit</a>
                     </div>
 
 

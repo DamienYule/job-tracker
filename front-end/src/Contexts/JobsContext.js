@@ -9,6 +9,7 @@ const JobProvider = ({ children }) => {
     const [comments, setComments] = useState([])
     const [displayNav, setDisplayNav] = useState("All Jobs")
     const [diplayComments, setDisplayComments] = useState("comments")
+    const [display, setDisplay] = useState("Info")
     const [comment, setComment] = useState({})
     return (
         <JobsContext.Provider value={{
@@ -17,7 +18,8 @@ const JobProvider = ({ children }) => {
             displayNav, setDisplayNav,
             comments, setComments,
             diplayComments, setDisplayComments,
-            comment, setComment
+            comment, setComment,
+            display, setDisplay
         }}>
             {children}
         </JobsContext.Provider>

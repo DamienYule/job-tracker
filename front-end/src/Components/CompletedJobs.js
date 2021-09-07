@@ -7,7 +7,7 @@ function CompletedJobs() {
     const { jobs, setJobs } = useContext(JobsContext);
     
     return (
-        <div class="list-group">
+        <div className="list-group">
             {jobs
                 .filter(jobComplete => jobComplete.status === "Completed")
                 .sort((a, b) => (a.id > b.id ? 1 : -1))

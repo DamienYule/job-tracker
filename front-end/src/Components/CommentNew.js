@@ -100,7 +100,7 @@ function CommentNew() {
         } else {
             min = minFromObj
         }
-        input.date = `${day}, ${month} ${date + prefix} at ${hour}:${min + amPm} `
+        input.date = `${day}, ${month} ${date + prefix} at ${hour}:${min + amPm} EST`
     }
 
 

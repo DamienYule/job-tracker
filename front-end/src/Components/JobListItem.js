@@ -10,9 +10,13 @@ const API = apiURL();
 function JobListItem({ jobObj }) {
   const { job, setJob } = useContext(JobsContext);
   const { comments,setComments} = useContext(JobsContext);
+  const { diplayComments, setDisplayComments} = useContext(JobsContext);
+  const { display, setDisplay} = useContext(JobsContext);
   const [displayStatus, setDisplayStatus] = useState("not")
   const handleSelect = async () => {
+    setDisplay("Info")
     setJob(jobObj)
+    setDisplayComments("comments")
     try {
       const res = await axios.get(`${API}/jobs/${jobObj.id}/comments`);
       setComments(res.data.payload);
@@ -24,11 +28,11 @@ function JobListItem({ jobObj }) {
   useEffect(() => {
     let display = ("not")
     if(jobObj.status === "Not in progress"){
-      display = "not"
+      display = "list-group-item-action list-group-item-light"
     }else if (jobObj.status === "In progress"){
-      display = "in"
+      display = "list-group-item-action list-group-item-primary"
     }else{
-      display = jobObj.status
+      display = "list-group-item-action list-group-item-success"
     }
     setDisplayStatus(display)
   }, [job])
@@ -39,7 +43,7 @@ function JobListItem({ jobObj }) {
         <h5 className="mb-1">{jobObj.job_name}</h5>
         <small>{jobObj.id}</small>
       </div>
-      <p className="mb-1">This job should take approximately {jobObj.number_of_hours} hours.</p>
+      <p className="mb-1">{jobObj.number_of_hours} hour job.</p>
       <small>{jobObj.location}</small>
     </li>
   )

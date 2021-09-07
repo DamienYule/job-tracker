@@ -8,7 +8,9 @@ const API = apiURL();
 function JobEdit() {
     const { job, setJob } = useContext(JobsContext);
     const { jobs, setJobs } = useContext(JobsContext);
+    const { display, setDisplay} = useContext(JobsContext);
     const handleDelete = async () => {
+
         try {
             const res = await axios.delete(`${API}/jobs/${job.id}`);
             if (res.data.success) {
@@ -22,6 +24,7 @@ function JobEdit() {
                     status: "",
                     completed: false
                 })
+                setDisplay("Info")
             }
         } catch (error) {
             console.log(error)
@@ -41,6 +44,7 @@ function JobEdit() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         await updateJob(job)
+        setDisplay("Info")
 
     }
     const updateJob = async (input) => {
@@ -64,8 +68,8 @@ function JobEdit() {
                     <a onClick={handleStatus} id="status" value="3" className="btn btn-success">Completed</a>
                 </div>
             </div>
-            <div class="card" >
-                <div class="card-body">
+            <div className="card" >
+                <div className="card-body">
 
                     <form onSubmit={handleSubmit}>
 
@@ -131,12 +135,12 @@ function JobEdit() {
                     </form>
                 </div>
             </div>
-            <div class="card" >
-                <div class="card-body">
-                    <h5 class="card-title">Deleting a job</h5>
-                    <p class="card-text">Only you as an administrator can delete this job. Click wisely or
+            <div className="card" >
+                <div className="card-body">
+                    <h5 className="card-title">Deleting a job</h5>
+                    <p className="card-text">Only you as an administrator can delete this job. Click wisely or
                         you will have to create the job again.</p>
-                    <a onClick={handleDelete} class="btn btn-danger">Delete Job</a>
+                    <a onClick={handleDelete} className="btn btn-danger">Delete Job</a>
                 </div>
             </div>
 

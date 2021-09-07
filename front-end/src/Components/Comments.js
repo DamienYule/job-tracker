@@ -19,9 +19,9 @@ function Comments() {
         <div>
             {diplayComments === "comments" && (
                 <div>
-                    <button onClick={handleSelect} class="btn btn-outline-primary btn-lg paddingAroundNewCommentButton">New comment</button>
-                    <ul class="list-group hoverList">
-                        {comments.map((commentObj) => {
+                    <button onClick={handleSelect} className="btn btn-outline-primary btn-lg paddingAroundNewCommentButton">New comment</button>
+                    <ul className="list-group hoverList">
+                        {comments.sort((a, b) => (b.id > a.id ? 1 : -1)).map((commentObj) => {
                             return (
                                 // <div> {commentObj.title}</div>
                                 <CommentListItem key={commentObj.id} commentObj={commentObj} />

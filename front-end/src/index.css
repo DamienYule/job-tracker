@@ -6,8 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: rgb(213, 204, 252); */
-  background-color:rgb(254, 252, 249);
+  background-color: rgb(213, 204, 252);
+  /* background-color:rgb(254, 252, 249); */
 }
 
 code {
@@ -17,14 +17,14 @@ code {
 h2{
   color:rgb(171, 169, 169);
 }
-navTop {
+.navTop {
   background-color: rgba(23, 109, 40, 0.338);
   height: 8%;
   display: flex;
   justify-content: space-between;
   border-bottom: solid 2px rgba(17, 82, 30, 0.482) ;
 }
-navSide .list-group{
+.navSide .list-group{
   width: 15vw;
   position:absolute;
   height: 87vh;
@@ -126,6 +126,9 @@ navSide .list-group{
 .Completed {
  background-color: #1a875479;
 }
+/* .list-group :hover{
+  background-color: #0d412979;
+ } */
 /* .not{
   background-color: rgb(246, 246, 246);
 } */

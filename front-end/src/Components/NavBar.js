@@ -11,13 +11,13 @@ const NavBar = () => {
     }
     return (
         <>
-            <navTop>
+            <nav className="navTop">
                 <Link className="logoPMA" to="/jobs">Publish Me ASAP</Link>
                 <Link className="initials" to={`/users/${user.userId}`}>
                     {initials}
                 </Link>
-            </navTop>
-            <navSide>
+            </nav>
+            <nav className="navSide">
                 <div className="list-group">
                     <a href="#"  onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">All Jobs</a>
                     <a  href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</a>
@@ -27,7 +27,7 @@ const NavBar = () => {
                     <a href="#" onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Notes</a>
 
                 </div>
-            </navSide>
+            </nav>
         </>
 
     );
