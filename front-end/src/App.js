@@ -30,18 +30,6 @@ const App = () => {
               <JobsList />
               <JobDetails/>
             </Route>
-            <Route path="/jobs/new">
-              < CreateJob/>
-            </Route>
-            {/* <Route exact path="/travelpackages/:id">
-              <PackageDetails />
-            </Route>
-            <Route exact path="/travelpackages/:id/edit">
-              <PackagesEditForm />
-            </Route>
-            <Route exact path="/travelpackages/:id/travelreview/new">
-              <ReviewNewForm/>
-            </Route> */}
             <Route path="*">
               <FourOFour />
             </Route> 
