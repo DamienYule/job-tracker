@@ -3,7 +3,7 @@ import { auth } from "../Services/Firebase";
 export const UserContext = createContext({ user: null });
 
 const UserProvider = ({ children }) => {
-  const dispatch = useDispatch();
+
   const [user, setUser] = useState(null);
   useEffect(() => {
     auth.onAuthStateChanged(async (user) => {
@@ -23,7 +23,7 @@ const UserProvider = ({ children }) => {
         console.log(error);
       }
     });
-  }, [dispatch]);
+  }, []);
   return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 };
 

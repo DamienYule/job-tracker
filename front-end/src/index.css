@@ -148,3 +148,8 @@ cursor: default;
 .hoverListAllJobs :hover{
   background-color: rgba(239, 247, 247, 0.674);
 }
+.loginContainer{
+  margin-top: 30px;
+  width: 70%;
+  margin-left: 15%;
+}

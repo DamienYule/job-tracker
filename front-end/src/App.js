@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import JobsProvider from "./Contexts/JobsContext";
+import UserProvider from "./Contexts/UserProvider";
 // import "./App.css"
 //Pages
  import HomeLogin from './Components/HomeLogin'
@@ -18,15 +19,17 @@ import CreateJob from "./Components/CreateJob";
 const App = () => {
   return (
     <div>
+      <UserProvider>
       <JobsProvider>
       <Router>
-        <NavBar />
+        
         <main>
           <Switch>
             <Route exact path="/">
               <HomeLogin />
             </Route>
             <Route exact path="/jobs">
+             <NavBar />
               <JobsList />
               <JobDetails/>
             </Route>
@@ -37,6 +40,7 @@ const App = () => {
         </main>
       </Router>
       </JobsProvider>
+      </UserProvider>
     </div>
   );
 };
