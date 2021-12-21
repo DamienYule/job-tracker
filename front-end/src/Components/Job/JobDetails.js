@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState, useEffect, useContext } from "react";
-import { JobsContext } from "../Contexts/JobsContext";
+import { JobsContext } from "../../Contexts/JobsContext";
 
 
 import JobInfo from './JobInfo';
 import JobEdit from './JobEdit';
-import Comments from './Comments';
+import Comments from '../Comments/Comments';
 
 
 

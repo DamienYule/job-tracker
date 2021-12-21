@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from "react";
-import { JobsContext } from "../Contexts/JobsContext";
+import { JobsContext } from "../../Contexts/JobsContext";
 
 function JobInfo() {
     const { job, setJob } = useContext(JobsContext);

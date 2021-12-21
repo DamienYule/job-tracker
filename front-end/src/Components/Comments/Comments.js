@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from "axios";
-import { apiURL } from "../util/apiURL";
-import { JobsContext } from "../Contexts/JobsContext";
+import { apiURL } from "../../util/apiURL";
+import { JobsContext } from "../../Contexts/JobsContext";
 import { useEffect, useContext, useState } from "react";
 import CommentListItem from './CommentListItem';
 import CommentEdit from './CommentEdit';

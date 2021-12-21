@@ -1,5 +1,5 @@
 import React from 'react'
-import { JobsContext } from "../Contexts/JobsContext";
+import { JobsContext } from "../../Contexts/JobsContext";
 import {  useContext} from "react";
 
 function CommentListItem({ commentObj }) {

@@ -1,19 +1,29 @@
 import axios from "axios";
-import { useContext, useState } from "react";
-import { JobsContext } from "../Contexts/JobsContext";
-import { apiURL } from "../util/apiURL";
+import {useHistory } from "react-router-dom";
+import { UserContext } from "../../Contexts/UserProvider";
+import { useContext, useState,useEffect } from "react";
+import { JobsContext } from "../../Contexts/JobsContext";
+import { apiURL } from "../../util/apiURL";
 const API = apiURL();
 
 function CommentNew() {
+    let history = useHistory();
+    const user = useContext(UserContext);
     const { job, setJob } = useContext(JobsContext);
     const { diplayComments, setDisplayComments } = useContext(JobsContext)
     const { comments, setComments } = useContext(JobsContext);
     const [input, setInput] = useState({
         title: "",
-        reviewer: "",
+        reviewer: user&&user.displayName,
         content: "",
         date: ""
     });
+    useEffect(()=>{
+        if (!user) {
+            history.push("/");
+        }
+      
+    },[user])
     const handleChange = (e) => {
         setInput({ ...input, [e.target.id]: e.target.value });
     };
@@ -107,7 +117,7 @@ function CommentNew() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-
+            <legend>{user&&user.displayName}</legend>
                 <div className="input-group mb-3">
                     <span
                         htmlFor="title"
@@ -117,22 +127,6 @@ function CommentNew() {
                     <input
                         id="title"
                         value={input.title}
-                        type="text"
-                        onChange={handleChange}
-                        required
-                        className="form-control"
-                        aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default" />
-                </div>
-                <div className="input-group mb-3">
-                    <span
-                        htmlFor="reviewer"
-                        className="input-group-text"
-                        id="inputGroup-sizing-default">reviewer
-                    </span>
-                    <input
-                        id="reviewer"
-                        value={input.reviewer}
                         type="text"
                         onChange={handleChange}
                         required

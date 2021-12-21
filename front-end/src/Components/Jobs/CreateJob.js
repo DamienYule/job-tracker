@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { JobsContext } from "../Contexts/JobsContext";
-import { apiURL } from "../util/apiURL";
+import { JobsContext } from "../../Contexts/JobsContext";
+import { apiURL } from "../../util/apiURL";
 const API = apiURL();
 
 function CreateJob() {

@@ -5,11 +5,19 @@ import { UserContext } from "../Contexts/UserProvider";
 import { signOut } from "../Services/Firebase";
 const NavBar = () => {
     let history = useHistory();
-    const [initials, setInitials] = useState("TK")
+    const [initials, setInitials] = useState("")
     const user = useContext(UserContext);
     const { displayNav, setDisplayNav } = useContext(JobsContext);
     const handleClick = (e) => {
         setDisplayNav(e.target.innerHTML)
+    }
+    const writeInitials = ( str ) =>{
+        let arr = str.split(" ")
+        let letters = ""
+        arr.forEach(el => {
+            letters += el[0].toUpperCase()
+        });
+        setInitials(letters)
     }
     const handleLogout = async () => {
         try {
@@ -23,6 +31,7 @@ const NavBar = () => {
         if (!user) {
             history.push("/");
         }
+        user&&writeInitials(user.displayName)
       }, [user])
     return (
         <>

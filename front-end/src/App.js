@@ -8,9 +8,8 @@ import FourOFour from './Components/FourOFour'
 //Components 
 
 import NavBar from './Components/NavBar'
-import JobsList from "./Components/JobsList";
-import JobDetails from "./Components/JobDetails";
-import CreateJob from "./Components/CreateJob";
+import JobsList from "./Components/Jobs/JobsList";
+import JobDetails from "./Components/Job/JobDetails";
 // import PackagesNewForm from "./components/PackagesNewForm";
 // import PackagesEditForm from "./components/PackagesEditForm";
 // import PackageDetails from "./components/PackageDetails";

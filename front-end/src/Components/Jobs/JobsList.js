@@ -1,8 +1,8 @@
 import axios from "axios";
-import { apiURL } from "../util/apiURL";
+import { apiURL } from "../../util/apiURL";
 import { useEffect, useContext, useState } from "react";
-import { JobsContext } from "../Contexts/JobsContext";
-import { UserContext } from "../Contexts/UserProvider"
+import { JobsContext } from "../../Contexts/JobsContext";
+import { UserContext } from "../../Contexts/UserProvider"
 import CompletedJobs from "./CompletedJobs";
 import { useHistory } from "react-router-dom";
 import AllJobs from "./AllJobs";

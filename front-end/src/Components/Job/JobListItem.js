@@ -1,8 +1,8 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
 import axios from "axios";
-import { apiURL } from "../util/apiURL";
-import { JobsContext } from "../Contexts/JobsContext";
+import { apiURL } from "../../util/apiURL";
+import { JobsContext } from "../../Contexts/JobsContext";
 import { useContext,useState,useEffect } from "react";
 
 const API = apiURL();
