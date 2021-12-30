@@ -27,13 +27,15 @@ jobs.post("/", async (req, res) => {
 
 jobs.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const updatedJob = await updateJob(id, req.body);
+  const uid = req.query.uid;
+  const updatedJob = await updateJob(id, req.body,uid);
   res.json(updatedJob);
 });
 
 jobs.delete("/:id", async (req, res) => {
   const { id } = req.params;
-  const deletedJob = await deleteJob(id)
+  const uid = req.query.uid;
+  const deletedJob = await deleteJob(id, uid)
   res.json(deletedJob)
 });
 

@@ -3,16 +3,18 @@ import { useContext } from "react";
 import { JobsContext } from "../../Contexts/JobsContext";
 import axios from "axios";
 import { apiURL } from "../../util/apiURL";
+import { UserContext } from "../../Contexts/UserProvider"
 const API = apiURL();
 
 function JobEdit() {
     const { job, setJob } = useContext(JobsContext);
     const { jobs, setJobs } = useContext(JobsContext);
+    const user = useContext(UserContext);
     const { display, setDisplay} = useContext(JobsContext);
     const handleDelete = async () => {
 
         try {
-            const res = await axios.delete(`${API}/jobs/${job.id}`);
+            const res = await axios.delete(`${API}/jobs/${job.id}?uid=${user.uid}`);
             if (res.data.success) {
                 setJobs(jobs.filter((jb) => jb.id !== job.id));
                 setJob({

@@ -7,7 +7,7 @@ function JobInfo() {
     return (
         <>
             <div className="card text-dark bg-light  mb-3" >
-                <div className="card-header">{job.job_name}</div>
+                <div className="card-header"><big>{job.job_name}</big><a onClick=""id="status" value="1" className="btn btn-light btn-sm claim-me">claim me</a></div>
                 <div className="card-body">
                     <h5 className="card-text">Location: {job.location}</h5>
                     <p className="card-text">Status: {job.status}</p>

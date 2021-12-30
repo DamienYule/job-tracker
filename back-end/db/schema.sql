@@ -22,6 +22,7 @@ CREATE TABLE users(
 --     location TEXT NOT NULL, 
 --     number_of_hours INT,
 --     status TEXT NOT NULL,
+--     uid TEXT,
 --     completed BOOLEAN NOT NULL DEFAULT FALSE
 -- );
 -- CREATE TABLE job_comments(
@@ -30,6 +31,7 @@ CREATE TABLE users(
 --     reviewer TEXT NOT NULL,
 --     content TEXT NOT NULL,
 --     date TEXT NOT NULL,
+--     uid TEXT,
 --     pma_jobs_id INT REFERENCES pma_jobs (id) 
 --         ON DELETE CASCADE 
 -- );
