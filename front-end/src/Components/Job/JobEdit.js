@@ -4,6 +4,7 @@ import { JobsContext } from "../../Contexts/JobsContext";
 import axios from "axios";
 import { apiURL } from "../../util/apiURL";
 import { UserContext } from "../../Contexts/UserProvider"
+import {updateJob} from "../../Helper/NetworkRequests"
 const API = apiURL();
 
 function JobEdit() {
@@ -11,6 +12,10 @@ function JobEdit() {
     const { jobs, setJobs } = useContext(JobsContext);
     const user = useContext(UserContext);
     const { display, setDisplay} = useContext(JobsContext);
+    const handleClaim = () => {
+
+    }
+    
     const handleDelete = async () => {
 
         try {
@@ -39,26 +44,33 @@ function JobEdit() {
         // e.preventDefault();
         // setJob({ ...job, status: e.target.innerHTML });
         const newStatus = {...job, status: e.target.innerHTML}
-        await updateJob(newStatus)
+        const res =  await updateJob(newStatus)
+        if (res.data.success) {
+            setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
+        }
         setJob(newStatus)
         console.log(job)
     }
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        await updateJob(job)
+        event.preventDefault(); 
+        const res = await updateJob(job)
+        if (res.data.success) {
+            setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
+        }
         setDisplay("Info")
 
     }
-    const updateJob = async (input) => {
-        try {
-            const res = await axios.put(`${API}/jobs/${job.id}`, input);
-            if (res.data.success) {
-                setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    };
+    // const updateJob = async (input) => {
+    //     try {
+    //         const res = await axios.put(`${API}/jobs/${job.id}`, input);
+    //         if (res.data.success) {
+    //             console.log(res.data)
+    //             setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
+    //         }
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
+    // };
     return (
         <div>
             <div className="card" >
