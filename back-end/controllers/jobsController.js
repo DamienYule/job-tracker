@@ -26,9 +26,14 @@ jobs.post("/", async (req, res) => {
 });
 
 jobs.put("/:id", async (req, res) => {
+  console.log("hello")
   const { id } = req.params;
   const uid = req.query.uid;
-  const updatedJob = await updateJob(id, req.body,uid);
+ console.log(uid)
+
+ //if user id matches job.uid or job.uid == null 
+  const updatedJob = await updateJob(id, req.body);
+  console.log(req.body)
   res.json(updatedJob);
 });
 

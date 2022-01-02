@@ -89,7 +89,7 @@ h2{
     height: 75vh;
     border: #DFDFDF solid 2px;
     border-radius: 10px;
-    margin-top: 2vh;
+    margin-top: 2.2vh;
     /* margin-left: 57.1vw; */
     right:2vw;
     background-color: white;
@@ -118,6 +118,8 @@ h2{
 }
 .id-number{
   margin-left: 2vw;
+  margin-top: 1.9vh;
+  
 }
 .list-group-item{
   cursor: pointer;
@@ -155,4 +157,9 @@ cursor: default;
 }
 .claim-me{
   float: right;
+}
+.owner{
+  display: inline;
+  float: right;
+  font-family:cursive;
 }

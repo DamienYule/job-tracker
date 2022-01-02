@@ -22,8 +22,6 @@ function JobDetails() {
             setDisplayComments("comments")
         }
     }
-
-    console.log(display)
     return (
         <div className="showSection">
             <h2 className="id-number">Job Number: {job.id}</h2>

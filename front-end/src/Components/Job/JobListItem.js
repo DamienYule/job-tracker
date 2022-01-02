@@ -23,6 +23,7 @@ function JobListItem({ jobObj }) {
     } catch (error) {
       console.log(error)
     }
+    console.log(job)
 
   }
   useEffect(() => {

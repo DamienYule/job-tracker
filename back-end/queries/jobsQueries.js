@@ -37,13 +37,13 @@ const newJob = async (job) => {
   }
 };
 
-const updateJob = async (id, job,uid) => {
-  const { job_name, description, location, number_of_hours,status,completed } =
+const updateJob = async (id, job) => {
+  const { job_name, description, location, number_of_hours,status,completed,owner,uid} =
     job;
   try {
     const updatedJob = await db.one(
-      `UPDATE pma_jobs SET job_name=$1, description=$2, location=$3, number_of_hours=$4, status=$5, completed=$6 , uid=$7 WHERE id=$8 RETURNING *`,
-      [job_name, description, location, number_of_hours,status,completed, uid, id]
+      `UPDATE pma_jobs SET job_name=$1, description=$2, location=$3, number_of_hours=$4, status=$5, completed=$6 , uid=$7, owner=$8 WHERE id=$9 RETURNING *`,
+      [job_name, description, location, number_of_hours,status,completed, uid,owner, id]
     );
     return { success: true, payload: updatedJob };
   } catch (error) {
