@@ -22,7 +22,7 @@ const NavBar = () => {
     const handleLogout = async () => {
         try {
           await signOut();
-        //   history.push("/");
+          history.push("/");
         } catch (error) {
           console.log(error);
         }
@@ -37,17 +37,17 @@ const NavBar = () => {
         <>
             <nav className="navTop">
                 <Link className="logoPMA" to="/jobs">Publish Me ASAP</Link>
-                <Link className="initials" onClick={handleLogout}>
+                <div className="initials" onClick={handleLogout}>
                     {initials}
-                </Link>
+                </div>
             </nav>
             <nav className="navSide">
                 <div className="list-group">
                     <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">All Jobs</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Assigned to me</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">In Progress</a>
+                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">In progress</a>
                     <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Completed</a>
+                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Assigned to me</a>
+                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</a>
                     <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Notes</a>
                 </div>
             </nav>

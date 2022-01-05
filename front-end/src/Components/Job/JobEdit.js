@@ -57,20 +57,9 @@ function JobEdit() {
         setDisplay("Info")
 
     }
-    // const updateJob = async (input) => {
-    //     try {
-    //         const res = await axios.put(`${API}/jobs/${job.id}`, input);
-    //         if (res.data.success) {
-    //             console.log(res.data)
-    //             setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
-    //         }
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // };
     return (
         <div>
-            {job.owner && job.uid == user.uid &&
+            {job.owner && job.uid == user?.uid &&
                 <div className="card" >
                     <div className="card-body" >
                         <h5 className="card-title">Set Status</h5>
@@ -81,7 +70,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user.uid ==  &&
+            {user?.uid == '' &&
                 <div className="card" >
                     <div className="card-body">
 
@@ -150,7 +139,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user.uid ==  &&
+            {user?.uid == '' &&
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">Deleting a job</h5>

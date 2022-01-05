@@ -29,12 +29,13 @@ function JobInfo() {
             setJob(newUID)
         }
     }
+    
     return (
         <>
             <div className="card text-dark bg-light  mb-3" >
                 <div className="card-header">
                     <big>{job.job_name}</big>
-                    {job.owner? <div className="owner">{job.owner}</div> : <a onClick={handleClaim} id="status" value="1" className="btn btn-light btn-sm claim-me">
+                    {job.owner ? <div className="owner">{job.owner}</div> : <a onClick={handleClaim} id="status" value="1" className="btn btn-light btn-sm claim-me">
                         Claim Job
                     </a>}
 
@@ -46,18 +47,11 @@ function JobInfo() {
                     <p className="card-text">Description of job: {job.description}</p>
                 </div>
             </div>
-            {job.owner && job.uid == user.uid &&
-            <button onClick={handleUnClaim} type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                Unclaim
-            </button>
-}
-            {/* job_name: "",
-                                                        description: "",
-                                                        location: "",
-                                                        number_of_hours: 0,
-                                                        status: "",
-                                                        completed: false */}
-
+            {job.owner && job.uid == user?.uid &&
+                <a onClick={handleUnClaim} className="btn btn-primary">
+                    Unclaim
+                </a>
+            }
         </>
     )
 }

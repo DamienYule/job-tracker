@@ -13,6 +13,7 @@ function JobDetails() {
     const { job, setJob } = useContext(JobsContext);
     const { diplayComments, setDisplayComments} = useContext(JobsContext);
     const { display, setDisplay} = useContext(JobsContext);
+
     useEffect(() => {
 
     }, [job])

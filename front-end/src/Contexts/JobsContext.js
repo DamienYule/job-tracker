@@ -11,6 +11,7 @@ const JobProvider = ({ children }) => {
     const [diplayComments, setDisplayComments] = useState("comments")
     const [display, setDisplay] = useState("Info")
     const [comment, setComment] = useState({})
+    // console.log({children})
     return (
         <JobsContext.Provider value={{
             jobs, setJobs,

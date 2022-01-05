@@ -7,6 +7,8 @@ import CompletedJobs from "./CompletedJobs";
 import { useHistory } from "react-router-dom";
 import AllJobs from "./AllJobs";
 import CreateJob from "./CreateJob";
+import AssignedJobs from "./AssignedJobs";
+import InProgressJobs from "./InProgressJobs";
 const API = apiURL();
 
 const JobsList = () => {
@@ -14,8 +16,6 @@ const JobsList = () => {
     const user = useContext(UserContext);
     const { jobs, setJobs } = useContext(JobsContext);
     const { displayNav, setDisplayNav } = useContext(JobsContext);
-
-
 
     useEffect(() => {
       
@@ -36,6 +36,8 @@ const JobsList = () => {
                 {displayNav === "Create Job" && < CreateJob />}
                 {displayNav === "All Jobs" && <AllJobs />}
                 {displayNav === "Completed" && <CompletedJobs />}
+                {displayNav === "Assigned to me" && <AssignedJobs />}
+                {displayNav === "In progress" && <InProgressJobs />}
             </div>
         </section>
 

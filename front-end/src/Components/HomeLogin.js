@@ -28,7 +28,7 @@ function HomeLogin() {
                     
                 </Link>
             </nav>
-            <div class="card text-center loginContainer">
+            <div className="card text-center loginContainer">
                 <h5 className="card-header">Welcome to our Job Tracker</h5>
                 <div className="card-body">
                     <h5 className="card-title">Sign in with gmail</h5>
