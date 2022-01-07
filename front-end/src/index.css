@@ -163,3 +163,22 @@ cursor: default;
   float: right;
   font-family:cursive;
 }
+.googleIcon{
+  width: 20px;
+  margin-right: 10px;
+}
+.UserIcon{
+  float: right;
+  width: 50px;
+}
+.AminIcon{
+  float: right;
+  width: 25px;
+}
+.otherEmail{
+  margin-left: 15px;
+}
+.modalClose{
+  float: right;
+  width: 25px;
+}

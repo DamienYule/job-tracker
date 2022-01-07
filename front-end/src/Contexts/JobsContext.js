@@ -11,6 +11,8 @@ const JobProvider = ({ children }) => {
     const [diplayComments, setDisplayComments] = useState("comments")
     const [display, setDisplay] = useState("Info")
     const [comment, setComment] = useState({})
+    const [loginModal , setLoginModal] = useState(false)
+    const [signInModal, setSignInModal] = useState(false)
     // console.log({children})
     return (
         <JobsContext.Provider value={{
@@ -20,7 +22,9 @@ const JobProvider = ({ children }) => {
             comments, setComments,
             diplayComments, setDisplayComments,
             comment, setComment,
-            display, setDisplay
+            display, setDisplay,
+            loginModal , setLoginModal,
+            signInModal, setSignInModal
         }}>
             {children}
         </JobsContext.Provider>

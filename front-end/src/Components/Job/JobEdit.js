@@ -70,7 +70,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user?.uid == '' &&
+            {user?.uid == "" &&
                 <div className="card" >
                     <div className="card-body">
 
@@ -139,7 +139,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user?.uid == '' &&
+            {user?.uid == "" &&
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">Deleting a job</h5>

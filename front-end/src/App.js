@@ -3,7 +3,7 @@ import JobsProvider from "./Contexts/JobsContext";
 import UserProvider from "./Contexts/UserProvider";
 // import "./App.css"
 //Pages
- import HomeLogin from './Components/HomeLogin'
+ import HomeLogin from './Components/Login/HomeLogin'
 import FourOFour from './Components/FourOFour'
 //Components 
 
