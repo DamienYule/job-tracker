@@ -10,16 +10,16 @@ import Comments from '../Comments/Comments';
 
 
 function JobDetails() {
-    const { job, setJob } = useContext(JobsContext);
-    const { diplayComments, setDisplayComments} = useContext(JobsContext);
-    const { display, setDisplay} = useContext(JobsContext);
+    const { job } = useContext(JobsContext);
+    const { setDisplayComments } = useContext(JobsContext);
+    const { display, setDisplay } = useContext(JobsContext);
 
     useEffect(() => {
 
     }, [job])
     const handleDisplay = (e) => {
         setDisplay(e.target.innerHTML)
-        if (e.target.innerHTML === "Comments"){
+        if (e.target.innerHTML === "Comments") {
             setDisplayComments("comments")
         }
     }
@@ -38,7 +38,7 @@ function JobDetails() {
                 </nav>
                 <div className="showBox">
                     {display === "Info" && <JobInfo />}
-                    {display === "Comments" && <Comments/>}
+                    {display === "Comments" && <Comments />}
                     {display === "Edit" && <JobEdit />}
                 </div>
             </div>

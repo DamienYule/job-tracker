@@ -4,7 +4,7 @@ import { useContext } from "react";
 import {JobsContext} from "../../Contexts/JobsContext"
 
 function CompletedJobs() {
-    const { jobs, setJobs } = useContext(JobsContext);
+    const { jobs } = useContext(JobsContext);
     
     return (
         <div className="list-group">

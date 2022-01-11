@@ -33,7 +33,13 @@ export const signup = async (email, password) => {
 };
 export const login = async (email, password) => {
   await auth.signInWithEmailAndPassword(email, password);
+  
 };
+// export const updateProfile = async (user)=>{
+//   await auth.user.updateProfile({
+//     displayName: "jon doe"  
+//   })
+// }
 export const signOut = async () => {
   try {
     await auth.signOut();

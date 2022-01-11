@@ -11,7 +11,7 @@ function JobEdit() {
     const { job, setJob } = useContext(JobsContext);
     const { jobs, setJobs } = useContext(JobsContext);
     const user = useContext(UserContext);
-    const { display, setDisplay } = useContext(JobsContext);
+    const { setDisplay } = useContext(JobsContext);
 
     const handleDelete = async () => {
 
@@ -70,7 +70,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user?.uid == "" &&
+            {user?.uid == 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
                 <div className="card" >
                     <div className="card-body">
 
@@ -139,7 +139,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user?.uid == "" &&
+            {user?.uid == 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">Deleting a job</h5>

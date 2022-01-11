@@ -1,10 +1,10 @@
 import React from 'react'
 import JobListItem from './../Job/JobListItem';
 import { useContext } from "react";
-import {JobsContext} from "../../Contexts/JobsContext"
+import { JobsContext } from "../../Contexts/JobsContext"
 
 function InProgressJobs() {
-    const { jobs, setJobs } = useContext(JobsContext);
+    const { jobs } = useContext(JobsContext);
 
     return (
         <div className="list-group">

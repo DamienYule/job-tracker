@@ -3,8 +3,8 @@ import { JobsContext } from "../../Contexts/JobsContext";
 import {  useContext} from "react";
 
 function CommentListItem({ commentObj }) {
-    const { diplayComments,setDisplayComments} = useContext(JobsContext);
-    const { comment, setComment } = useContext(JobsContext);
+    const {setDisplayComments} = useContext(JobsContext);
+    const {  setComment } = useContext(JobsContext);
 
     const handleSelect = () => {
         setDisplayComments("editComments")

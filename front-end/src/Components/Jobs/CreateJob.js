@@ -5,8 +5,8 @@ import { apiURL } from "../../util/apiURL";
 const API = apiURL();
 
 function CreateJob() {
-    const { jobs, setJobs } = useContext(JobsContext);
-    const { displayNav, setDisplayNav } = useContext(JobsContext);
+    const { setJobs } = useContext(JobsContext);
+    const { setDisplayNav } = useContext(JobsContext);
     const [input, setInput] = useState({
         job_name: "",
         description: "",
@@ -26,12 +26,12 @@ function CreateJob() {
     }
     const addJob = async (input) => {
         try {
-           const res =  await axios.post(`${API}/jobs`, input);
-            if (res.data.success){
+            const res = await axios.post(`${API}/jobs`, input);
+            if (res.data.success) {
                 console.log(res.data.payload)
-                setJobs( oldArrayOfJobs => [...oldArrayOfJobs, res.data.payload]);
-                
-              }
+                setJobs(oldArrayOfJobs => [...oldArrayOfJobs, res.data.payload]);
+
+            }
         } catch (err) {
             console.log(err);
         }

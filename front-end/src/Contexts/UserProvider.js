@@ -9,13 +9,29 @@ const UserProvider = ({ children }) => {
     auth.onAuthStateChanged(async (user) => {
       try {
         if (user) {
-          const { displayName, email, photoURL, uid } = user;
-          await setUser({
-            displayName,
-            email,
-            photoURL,
-            uid,
-          });
+          if(user.uid == "Cf0scKx42QQVUgGn42co4hGfG7H3"){
+            const {  email, uid } = user
+            await setUser({
+              displayName:"Administrator",
+              email,
+              uid,
+            })
+          }else if(user.displayName){
+            const { displayName, email, photoURL, uid } = user;
+            await setUser({
+              displayName,
+              email,
+              photoURL,
+              uid,
+            });
+          }else{
+            const {  email, uid } = user
+            await setUser({
+              displayName:email,
+              email,
+              uid,
+            })
+          }
         } else {
           setUser(null);
         }

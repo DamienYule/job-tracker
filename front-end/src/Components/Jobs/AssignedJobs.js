@@ -1,11 +1,11 @@
 import React from 'react'
 import JobListItem from './../Job/JobListItem';
 import { useContext } from "react";
-import {JobsContext} from "../../Contexts/JobsContext"
+import { JobsContext } from "../../Contexts/JobsContext"
 import { UserContext } from "../../Contexts/UserProvider"
 
 function AssignedJobs() {
-    const { jobs, setJobs } = useContext(JobsContext);
+    const { jobs } = useContext(JobsContext);
     const user = useContext(UserContext);
     return (
         <div className="list-group">

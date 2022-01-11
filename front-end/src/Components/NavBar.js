@@ -1,5 +1,5 @@
-import { Link,useHistory } from "react-router-dom";
-import { useState, useContext,useEffect} from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
 import { JobsContext } from "../Contexts/JobsContext";
 import { UserContext } from "../Contexts/UserProvider";
 import { signOut } from "../Services/Firebase";
@@ -7,11 +7,11 @@ const NavBar = () => {
     let history = useHistory();
     const [initials, setInitials] = useState("")
     const user = useContext(UserContext);
-    const { displayNav, setDisplayNav } = useContext(JobsContext);
+    const { setDisplayNav } = useContext(JobsContext);
     const handleClick = (e) => {
         setDisplayNav(e.target.innerHTML)
     }
-    const writeInitials = ( str ) =>{
+    const writeInitials = (str) => {
         let arr = str.split(" ")
         let letters = ""
         arr.forEach(el => {
@@ -21,18 +21,18 @@ const NavBar = () => {
     }
     const handleLogout = async () => {
         try {
-          await signOut();
-          history.push("/");
+            await signOut();
+            history.push("/");
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      };
-      useEffect(() => {
+    };
+    useEffect(() => {
         if (!user) {
             history.push("/");
         }
-        user&&writeInitials(user.displayName)
-      }, [user])
+        user && writeInitials(user.displayName)
+    }, [user])
     return (
         <>
             <nav className="navTop">
@@ -47,8 +47,8 @@ const NavBar = () => {
                     <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">In progress</a>
                     <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Completed</a>
                     <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Assigned to me</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Notes</a>
+                    {(user?.uid == "Cf0scKx42QQVUgGn42co4hGfG7H3") && <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</a>}
+                    <a onClick={handleLogout} className="list-group-item list-group-item-action list-group-item-light">Log Out</a>
                 </div>
             </nav>
         </>

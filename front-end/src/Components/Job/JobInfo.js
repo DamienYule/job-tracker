@@ -11,7 +11,6 @@ function JobInfo() {
 
     const handleUnClaim = async () => {
         const newUID = { ...job, owner: null, uid: null }
-        console.log(user.displayName)
 
         const res = await updateJob(newUID, user)
         if (res.data.success) {
@@ -21,7 +20,6 @@ function JobInfo() {
     }
     const handleClaim = async () => {
         const newUID = { ...job, owner: user.displayName, uid: user.uid }
-        console.log(user.displayName)
 
         const res = await updateJob(newUID, user)
         if (res.data.success) {

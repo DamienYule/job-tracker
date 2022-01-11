@@ -7,7 +7,7 @@ const API = apiURL();
 function CommentEdit() {
     const { comment, setComment } = useContext(JobsContext);
     const { comments, setComments } = useContext(JobsContext);
-    const { diplayComments, setDisplayComments} = useContext(JobsContext);
+    const { setDisplayComments } = useContext(JobsContext);
 
     const handleChange = (e) => {
         setComment({ ...comment, [e.target.id]: e.target.value });
@@ -15,7 +15,7 @@ function CommentEdit() {
     const handleDelete = async () => {
         try {
             const res = await axios.delete(`${API}/jobs/1/comments/${comment.id}`);
-            if (res.data.success){
+            if (res.data.success) {
                 setComments(comments.filter((comt) => comt.id !== comment.id));
                 setDisplayComments("comments")
             }
@@ -41,12 +41,12 @@ function CommentEdit() {
     };
     return (
         <div>
-           
-{/* content, date, pma_jobs_id, reviewer, title */}
+
+            {/* content, date, pma_jobs_id, reviewer, title */}
 
 
-            <div class="card" >
-                <div class="card-body">
+            <div className="card" >
+                <div className="card-body">
 
                     <form onSubmit={handleSubmit}>
 
@@ -95,9 +95,9 @@ function CommentEdit() {
                                 aria-describedby="inputGroup-sizing-default" />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
-                    <button type="button" onClick={handleDelete} class="btn btn-danger">Delete</button>
+                        <button type="button" onClick={handleDelete} className="btn btn-danger">Delete</button>
                     </form>
-          
+
                 </div>
             </div>
         </div>

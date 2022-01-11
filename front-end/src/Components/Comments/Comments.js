@@ -1,17 +1,14 @@
 import React from 'react'
-import axios from "axios";
-import { apiURL } from "../../util/apiURL";
 import { JobsContext } from "../../Contexts/JobsContext";
-import { useEffect, useContext, useState } from "react";
+import { useContext, } from "react";
 import CommentListItem from './CommentListItem';
 import CommentEdit from './CommentEdit';
 import CommentNew from './CommentNew';
-const API = apiURL();
 
 function Comments() {
-    const { comments, setComments } = useContext(JobsContext);
+    const { comments } = useContext(JobsContext);
     const { diplayComments, setDisplayComments } = useContext(JobsContext)
-    const handleSelect =()=>{
+    const handleSelect = () => {
         setDisplayComments("newComment")
     }
 

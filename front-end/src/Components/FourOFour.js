@@ -1,4 +1,3 @@
-
 const FourOFour = () => {
     return (
         <div className="fourOFourContainer">

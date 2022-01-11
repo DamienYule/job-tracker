@@ -1,7 +1,7 @@
 import axios from "axios";
-import {useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../../Contexts/UserProvider";
-import { useContext, useState,useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { JobsContext } from "../../Contexts/JobsContext";
 import { apiURL } from "../../util/apiURL";
 import { dateAndTime } from "../../Helper/DateAndTime";
@@ -10,21 +10,21 @@ const API = apiURL();
 function CommentNew() {
     let history = useHistory();
     const user = useContext(UserContext);
-    const { job, setJob } = useContext(JobsContext);
-    const { diplayComments, setDisplayComments } = useContext(JobsContext)
-    const { comments, setComments } = useContext(JobsContext);
+    const { job, } = useContext(JobsContext);
+    const { setDisplayComments } = useContext(JobsContext)
+    const { setComments } = useContext(JobsContext);
     const [input, setInput] = useState({
         title: "",
-        reviewer: user&&user.displayName,
+        reviewer: user && user.displayName,
         content: "",
         date: ""
     });
-    useEffect(()=>{
+    useEffect(() => {
         if (!user) {
             history.push("/");
         }
-      
-    },[user])
+
+    }, [user])
     const handleChange = (e) => {
         setInput({ ...input, [e.target.id]: e.target.value });
     };
@@ -52,7 +52,7 @@ function CommentNew() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-            <legend>{user&&user.displayName}</legend>
+                <legend>{user && user.displayName}</legend>
                 <div className="input-group mb-3">
                     <span
                         htmlFor="title"

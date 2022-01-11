@@ -1,10 +1,9 @@
 import axios from "axios";
 import { apiURL } from "../../util/apiURL";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { JobsContext } from "../../Contexts/JobsContext";
 import { UserContext } from "../../Contexts/UserProvider"
 import CompletedJobs from "./CompletedJobs";
-import { useHistory } from "react-router-dom";
 import AllJobs from "./AllJobs";
 import CreateJob from "./CreateJob";
 import AssignedJobs from "./AssignedJobs";
@@ -12,13 +11,12 @@ import InProgressJobs from "./InProgressJobs";
 const API = apiURL();
 
 const JobsList = () => {
-    const history = useHistory();
     const user = useContext(UserContext);
-    const { jobs, setJobs } = useContext(JobsContext);
-    const { displayNav, setDisplayNav } = useContext(JobsContext);
+    const { setJobs } = useContext(JobsContext);
+    const { displayNav } = useContext(JobsContext);
 
     useEffect(() => {
-      
+
         const getAllJobs = async () => {
             try {
                 const res = await axios.get(`${API}/jobs`);
