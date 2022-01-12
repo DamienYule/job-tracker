@@ -48,11 +48,11 @@ function JobInfo() {
                     <p className="card-text">Description of job: {job.description}</p>
                 </div>
             </div>
-            
+            {job.owner && job.uid === user?.uid &&
                 <button onClick={handleUnClaim} className="btn btn-primary">
                     Unclaim
                 </button>
-            
+            }
         </>
     )
 }
