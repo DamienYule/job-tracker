@@ -1,12 +1,11 @@
 import React from 'react'
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { JobsContext } from "../../Contexts/JobsContext";
 
 
 import JobInfo from './JobInfo';
 import JobEdit from './JobEdit';
 import Comments from '../Comments/Comments';
-
 
 
 function JobDetails() {
@@ -29,9 +28,9 @@ function JobDetails() {
             <div className="showList">
                 <nav className="showNav">
                     <div className="list-group list-group-horizontal">
-                        <a onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Info</a>
-                        <a onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Comments</a>
-                        <a onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Edit</a>
+                        <button onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Info</button>
+                        <button onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Comments</button>
+                        <button onClick={handleDisplay} className="list-group-item list-group-item-action list-group-item-light">Edit</button>
                     </div>
 
 

@@ -70,7 +70,7 @@ function HomeLogin() {
                                 </ul>
                             </div>
                             <div className="card-footer bg-transparent border-success">Feel free to make comments. Please no profanity, but we do enjoy a good joke.</div>
-                            <a className="btn btn-primary" onClick={handleGoogle}><img className="googleIcon" src={GoogleIcon} />Login</a>
+                            <button className="btn btn-primary" onClick={handleGoogle}><img className="googleIcon" src={GoogleIcon} />Login</button>
 
                             <Button variant="primary" className="otherEmail" onClick={() => setSignUpModal(true)}>
                                 Sign Up With Different Email
@@ -91,7 +91,7 @@ function HomeLogin() {
                                 </ul>
                             </div>
                             <div className="card-footer bg-transparent border-success">Anybody can sign in as the admin because this is not the production repository. Feel free to make some jobs.</div>
-                            <a className="btn btn-primary" onClick={handleLoginIn}>Administrator Login</a>
+                            <button className="btn btn-primary" onClick={handleLoginIn}>Administrator Login</button>
                         </div>
                     </div>
                 </div>

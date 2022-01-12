@@ -14,7 +14,7 @@ function CommentListItem({ commentObj }) {
         <li className="list-group-item ">
             <div className="d-flex w-100 justify-content-between">
                 <h5 className="mb-1">{commentObj.title}</h5>
-                <small className="cursorOnButton"><a><button onClick={handleSelect}  className="btn btn-outline-secondary btn-sm cursorOnButton">{commentObj.reviewer}</button></a></small>
+                <small className="cursorOnButton"><button onClick={handleSelect}  className="btn btn-outline-secondary btn-sm cursorOnButton">{commentObj.reviewer}</button></small>
             </div>
             <p className="mb-1">{commentObj.content}</p>
             <small>{commentObj.date}</small>

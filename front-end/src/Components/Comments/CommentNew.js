@@ -24,23 +24,20 @@ function CommentNew() {
             history.push("/");
         }
 
-    }, [user])
+    })
     const handleChange = (e) => {
         setInput({ ...input, [e.target.id]: e.target.value });
     };
     const handleSubmit = async (event) => {
-        console.log("handleSubmit")
         dateAndTime(input)
         event.preventDefault();
         await addComment(input)
         setDisplayComments("comments")
     }
     const addComment = async (input) => {
-        console.log("addComment", job.id)
         try {
             const res = await axios.post(`${API}/jobs/${job.id}/comments`, input);
             if (res.data.success) {
-                console.log(res.data.payload)
                 setComments(oldArrayOfComments => [...oldArrayOfComments, res.data.payload]);
 
             }

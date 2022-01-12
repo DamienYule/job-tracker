@@ -43,12 +43,12 @@ const NavBar = () => {
             </nav>
             <nav className="navSide">
                 <div className="list-group">
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">All Jobs</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">In progress</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Completed</a>
-                    <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Assigned to me</a>
-                    {(user?.uid == "Cf0scKx42QQVUgGn42co4hGfG7H3") && <a onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</a>}
-                    <a onClick={handleLogout} className="list-group-item list-group-item-action list-group-item-light">Log Out</a>
+                    <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">All Jobs</button>
+                    <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">In progress</button>
+                    <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Completed</button>
+                    <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Assigned to me</button>
+                    {(user?.uid === "Cf0scKx42QQVUgGn42co4hGfG7H3") && <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</button>}
+                    <button onClick={handleLogout} className="list-group-item list-group-item-action list-group-item-light">Log Out</button>
                 </div>
             </nav>
         </>

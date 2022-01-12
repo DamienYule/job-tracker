@@ -59,18 +59,18 @@ function JobEdit() {
     }
     return (
         <div>
-            {job.owner && job.uid == user?.uid &&
+            {job.owner && job.uid === user?.uid &&
                 <div className="card" >
                     <div className="card-body" >
                         <h5 className="card-title">Set Status</h5>
                         <p className="card-text">The status of this job is currently {job.status}.</p>
-                        <a onClick={handleStatus} id="status" value="1" className="btn btn-light">Not in progress</a>
-                        <a onClick={handleStatus} id="status" value="2" className="btn btn-primary">In progress</a>
-                        <a onClick={handleStatus} id="status" value="3" className="btn btn-success">Completed</a>
+                        <button onClick={handleStatus} id="status" value="1" className="btn btn-light">Not in progress</button>
+                        <button onClick={handleStatus} id="status" value="2" className="btn btn-primary">In progress</button>
+                        <button onClick={handleStatus} id="status" value="3" className="btn btn-success">Completed</button>
                     </div>
                 </div>
             }
-            {user?.uid == 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
+            {user?.uid === 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
                 <div className="card" >
                     <div className="card-body">
 
@@ -139,13 +139,13 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user?.uid == 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
+            {user?.uid === 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">Deleting a job</h5>
                         <p className="card-text">Only you as an administrator can delete this job. Click wisely or
                             you will have to create the job again.</p>
-                        <a onClick={handleDelete} className="btn btn-danger">Delete Job</a>
+                        <button onClick={handleDelete} className="btn btn-danger">Delete Job</button>
                     </div>
                 </div>
             }
