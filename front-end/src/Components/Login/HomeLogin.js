@@ -32,7 +32,6 @@ function HomeLogin() {
             console.log(error);
         }
 
-
     };
     const handleGoogle = () => {
         try {

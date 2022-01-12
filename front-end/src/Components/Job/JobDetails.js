@@ -36,9 +36,10 @@ function JobDetails() {
 
                 </nav>
                 <div className="showBox">
-                    {display === "Info" && <JobInfo />}
-                    {display === "Comments" && <Comments />}
-                    {display === "Edit" && <JobEdit />}
+                    {!job.id && <div className='noJobSelected'> No job selected</div>}
+                    {job.id &&display === "Info" && <JobInfo />}
+                    {job.id &&display === "Comments" && <Comments />}
+                    {job.id &&display === "Edit" && <JobEdit />}
                 </div>
             </div>
         </div>

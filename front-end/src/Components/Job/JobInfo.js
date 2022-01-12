@@ -10,13 +10,15 @@ function JobInfo() {
     const user = useContext(UserContext);
 
     const handleUnClaim = async () => {
-        const newUID = { ...job, owner: null, uid: null }
+        const newUID = { ...job, owner: null, uid: null,status:"Not in progress" }
 
         const res = await updateJob(newUID, user)
         if (res.data.success) {
             setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
             setJob(newUID)
+            
         }
+       
     }
     const handleClaim = async () => {
         const newUID = { ...job, owner: user.displayName, uid: user.uid }
@@ -27,6 +29,7 @@ function JobInfo() {
             setJob(newUID)
         }
     }
+
     
     return (
         <>

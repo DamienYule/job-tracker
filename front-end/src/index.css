@@ -182,3 +182,7 @@ cursor: default;
   float: right;
   width: 25px;
 }
+.noJobSelected{
+  font-size: larger;
+  font-family:monospace;
+}

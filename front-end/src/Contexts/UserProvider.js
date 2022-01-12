@@ -9,7 +9,7 @@ const UserProvider = ({ children }) => {
     auth.onAuthStateChanged(async (user) => {
       try {
         if (user) {
-          if(user.uid === "Cf0scKx42QQVUgGn42co4hGfG7H3"){
+          if(user.uid === "X7bSIEF60EWLKBXXMxsrAugxSnx2"){
             const {  email, uid } = user
             await setUser({
               displayName:"Administrator",
