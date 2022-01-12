@@ -49,7 +49,7 @@ function JobEdit() {
     }
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const res = await updateJob(job)
+        const res = await updateJob(job,user)
         if (res.data.success) {
             setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
         }
