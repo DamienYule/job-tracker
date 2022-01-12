@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { JobsContext } from "../../Contexts/JobsContext"
 
 function AllJobs() {
-    console.log("deploy")
     const { jobs } = useContext(JobsContext);
     return (
 

@@ -28,7 +28,6 @@ function CreateJob() {
         try {
             const res = await axios.post(`${API}/jobs`, input);
             if (res.data.success) {
-                console.log(res.data.payload)
                 setJobs(oldArrayOfJobs => [...oldArrayOfJobs, res.data.payload]);
 
             }
