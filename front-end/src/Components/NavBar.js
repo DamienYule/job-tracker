@@ -32,7 +32,7 @@ const NavBar = () => {
             history.push("/");
         }
         user && writeInitials(user.displayName)
-    }, [user])
+    }, [history,user])
     return (
         <>
             <nav className="navTop">

@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import {  useContext, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { signInWithGoogle, login } from "../../Services/Firebase";
 import { UserContext } from "../../Contexts/UserProvider";
@@ -58,7 +58,7 @@ function HomeLogin() {
             <div className="row loginContainer" >
                 <div className="col-sm-6">
                     <div className="card">
-                        <h5 className="card-header">Login as a user <img src={UserIcon} className="UserIcon" /></h5>
+                        <h5 className="card-header">Login as a user <img alt="User Icon" src={UserIcon} className="UserIcon" /></h5>
                         <div className="card-body">
                             <h5 className="card-title">As a user you are able to</h5>
                             <div className="card-text">
@@ -70,7 +70,7 @@ function HomeLogin() {
                                 </ul>
                             </div>
                             <div className="card-footer bg-transparent border-success">Feel free to make comments. Please no profanity, but we do enjoy a good joke.</div>
-                            <button className="btn btn-primary" onClick={handleGoogle}><img className="googleIcon" src={GoogleIcon} />Login</button>
+                            <button className="btn btn-primary" onClick={handleGoogle}><img alt="google icon" className="googleIcon" src={GoogleIcon} />Login</button>
 
                             <Button variant="primary" className="otherEmail" onClick={() => setSignUpModal(true)}>
                                 Sign Up With Different Email
@@ -80,7 +80,7 @@ function HomeLogin() {
                 </div>
                 <div className="col-sm-6">
                     <div className="card">
-                        <h5 className="card-header">Login as the administrator <img src={AdminIcon} className="AminIcon" /></h5>
+                        <h5 className="card-header">Login as the administrator <img alt="Admin Icon" src={AdminIcon} className="AminIcon" /></h5>
                         <div className="card-body">
                             <h5 className="card-title">As the administrator you are able to</h5>
                             <div className="card-text">

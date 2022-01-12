@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { JobsContext } from "../../Contexts/JobsContext"
 
 function AllJobs() {
+
     const { jobs } = useContext(JobsContext);
     return (
 

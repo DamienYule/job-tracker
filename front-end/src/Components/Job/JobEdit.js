@@ -46,7 +46,6 @@ function JobEdit() {
             setJobs(jobs.map((jb) => jb.id === job.id ? (jb = res.data.payload) : jb))
         }
         setJob(newStatus)
-        console.log(job)
     }
     const handleSubmit = async (event) => {
         event.preventDefault();

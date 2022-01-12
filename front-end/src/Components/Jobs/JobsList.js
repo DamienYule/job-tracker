@@ -26,7 +26,7 @@ const JobsList = () => {
             }
         };
         getAllJobs();
-    }, [user]);
+    }, [setJobs,user]);
     return (
         <section className="jobsSection">
             <h2>{displayNav}</h2>
