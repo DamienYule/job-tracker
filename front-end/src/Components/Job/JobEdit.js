@@ -69,7 +69,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user?.uid === 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
+            {user?.uid === 'X7bSIEF60EWLKBXXMxsrAugxSnx2' &&
                 <div className="card" >
                     <div className="card-body">
 
@@ -138,7 +138,7 @@ function JobEdit() {
                     </div>
                 </div>
             }
-            {user?.uid === 'Cf0scKx42QQVUgGn42co4hGfG7H3' &&
+            {user?.uid === 'X7bSIEF60EWLKBXXMxsrAugxSnx2' &&
                 <div className="card" >
                     <div className="card-body">
                         <h5 className="card-title">Deleting a job</h5>
