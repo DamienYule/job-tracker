@@ -3,7 +3,7 @@ import JobsProvider from "./Contexts/JobsContext";
 import UserProvider from "./Contexts/UserProvider";
 // import "./App.css"
 //Pages
- import HomeLogin from './Components/Login/HomeLogin'
+import HomeLogin from './Components/Login/HomeLogin'
 import FourOFour from './Components/FourOFour'
 //Components 
 
@@ -19,26 +19,29 @@ const App = () => {
   return (
     <div>
       <UserProvider>
-      <JobsProvider>
-      <Router>
-        
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <HomeLogin />
-            </Route>
-            <Route exact path="/jobs">
-             <NavBar />
-              <JobsList />
-              <JobDetails/>
-            </Route>
-            <Route path="*">
-              <FourOFour />
-            </Route> 
-          </Switch>
-        </main>
-      </Router>
-      </JobsProvider>
+        <JobsProvider>
+          <Router>
+            <main>
+              <Switch>
+                <Route exact path="/">
+                  <HomeLogin />
+                </Route>
+                <>
+                  <Switch>
+                    <Route exact path="/jobs">
+                      <NavBar />
+                      <JobsList />
+                      <JobDetails />
+                    </Route>
+                    <Route path="*">
+                      <FourOFour />
+                    </Route>
+                  </Switch>
+                </>
+                </Switch>
+            </main>
+          </Router>
+        </JobsProvider>
       </UserProvider>
     </div>
   );
