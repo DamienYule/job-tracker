@@ -186,3 +186,13 @@ cursor: default;
   font-size: larger;
   font-family:monospace;
 }
+.commentOwner{
+  font-size: small;
+  font-family: cursive;
+}
+.ownerOfJobOnListItem{
+  display: inline;
+  float: right;
+  font-family: cursive;
+  font-size: x-small;
+}

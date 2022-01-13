@@ -41,6 +41,7 @@ function JobListItem({ jobObj }) {
         <small>{jobObj.id}</small>
       </div>
       <p className="mb-1">{jobObj.number_of_hours} hour job.</p>
+      <small className="ownerOfJobOnListItem">{jobObj.owner}</small>
       <small>{jobObj.location}</small>
     </li>
   )

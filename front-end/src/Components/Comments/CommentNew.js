@@ -17,7 +17,8 @@ function CommentNew() {
         title: "",
         reviewer: user && user.displayName,
         content: "",
-        date: ""
+        date: "",
+        uid:user && user.uid
     });
     useEffect(() => {
         if (!user) {

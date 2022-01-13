@@ -27,11 +27,11 @@ const getComment = async (commmentId) => {
 };
 
 const createComment = async (jobId, newComment) => {
-  const {title, reviewer, content, date} = newComment;
+  const {title, reviewer, content, date,uid} = newComment;
   try {
     const createdReview = await db.one(
-      "INSERT INTO job_comments(title , reviewer , content , date ,pma_jobs_id ) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [title, reviewer, content, date, jobId]);
+      "INSERT INTO job_comments(title , reviewer , content , date ,pma_jobs_id,uid ) VALUES ($1, $2, $3, $4, $5,$6) RETURNING *",
+      [title, reviewer, content, date, jobId,uid]);
     return { success: true, payload: createdReview };
   } catch (error) {
     return { success: false, payload: error };
