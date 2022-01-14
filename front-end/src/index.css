@@ -156,7 +156,9 @@ cursor: default;
   margin-left: 15%;
 }
 .claim-me{
+  display:inline-table;
   float: right;
+  margin-top: -28px;
 }
 .owner{
   display: inline;
@@ -195,4 +197,7 @@ cursor: default;
   float: right;
   font-family: cursive;
   font-size: x-small;
+}
+.hideEmailForm{
+  display: none;
 }
