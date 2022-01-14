@@ -53,13 +53,13 @@ function JobInfo() {
                     {job.owner ? <div className="owner">{job.owner}</div> :
                         <form onSubmit={sendEmail}>
                             <input id="status" type="submit" value="Claim" className="btn btn-light btn-sm claim-me" />
-                            <input className='hideEmailForm' readOnly value={user.displayName} name="displayName" />
+                            <input className='hideEmailForm' readOnly value={user?.displayName} name="displayName" />
                             <input className='hideEmailForm' readOnly value={job.id} name="id" />
                             <input className='hideEmailForm' readOnly value={job.job_name} name="jobName" />
                             <input className='hideEmailForm' readOnly value={job.description} name="moreInfo" />
                             <input className='hideEmailForm' readOnly value={job.number_of_hours} name="numberOfHours" />
                             <input className='hideEmailForm' readOnly value={job.location} name="location" />
-                            <input className='hideEmailForm' readOnly value={user.email} name="email" />
+                            <input className='hideEmailForm' readOnly value={user?.email} name="email" />
                         </form>}
 
                 </div>
