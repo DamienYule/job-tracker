@@ -14,8 +14,7 @@ function JobInfo() {
         e.preventDefault();
 
         emailjs.sendForm('service_bw2ldrc', 'template_4atcvsl', e.target, 'user_JF8h5xahpfBnEny4aFQKD')
-            .then((result) => {
-                console.log(result.text);
+            .then(() => {
                 handleClaim()
             }, (error) => {
                 console.log(error.text);

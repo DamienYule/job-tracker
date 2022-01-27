@@ -33,6 +33,11 @@ const App = () => {
                       <JobsList />
                       <JobDetails />
                     </Route>
+                    <Route exact path="/users">
+                      <NavBar />
+                      {/* < />
+                      < /> */}
+                    </Route>
                     <Route path="*">
                       <FourOFour />
                     </Route>

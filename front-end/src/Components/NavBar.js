@@ -48,6 +48,7 @@ const NavBar = () => {
                     <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Completed</button>
                     <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Assigned to me</button>
                     {(user?.uid === "X7bSIEF60EWLKBXXMxsrAugxSnx2") && <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Create Job</button>}
+                    {/* {(user?.uid === "X7bSIEF60EWLKBXXMxsrAugxSnx2") && <button onClick={handleClick} className="list-group-item list-group-item-action list-group-item-light">Users</button>} */}
                     <button onClick={handleLogout} className="list-group-item list-group-item-action list-group-item-light">Log Out</button>
                 </div>
             </nav>

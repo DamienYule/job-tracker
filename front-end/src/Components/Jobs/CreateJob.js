@@ -17,7 +17,6 @@ function CreateJob() {
     });
 
     const handleChange = (e) => {
-        console.log(e.target)
         setInput({ ...input, [e.target.id]: e.target.value });
     };
     const handleSubmit = async (event) => {
