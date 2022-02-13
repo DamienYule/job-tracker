@@ -11,7 +11,7 @@ function JobInfo() {
     const user = useContext(UserContext);
 
     const sendEmail = (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
 
         emailjs.sendForm('service_bw2ldrc', 'template_4atcvsl', e.target, 'user_JF8h5xahpfBnEny4aFQKD')
             .then(() => {

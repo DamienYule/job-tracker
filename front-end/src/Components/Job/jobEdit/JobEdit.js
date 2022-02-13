@@ -1,10 +1,10 @@
 import React from 'react'
 import { useContext } from "react";
-import { JobsContext } from "../../Contexts/JobsContext";
+import { JobsContext } from "../../../Contexts/JobsContext";
 import axios from "axios";
-import { apiURL } from "../../util/apiURL";
-import { UserContext } from "../../Contexts/UserProvider"
-import { updateJob } from "../../Helper/NetworkRequests"
+import { apiURL } from "../../../util/apiURL";
+import { UserContext } from "../../../Contexts/UserProvider"
+import { updateJob } from "../../../Helper/NetworkRequests"
 const API = apiURL();
 
 function JobEdit() {

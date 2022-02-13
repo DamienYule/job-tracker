@@ -11,7 +11,7 @@ const {
 jobs.use('/:jobId/comments', jobMessagesController)
 jobs.get("/", async (req, res) => {
   const allJobs = await fetchAllJobs();
-  res.json(allJobs);
+  res.json(allJobs);  
 });
 
 jobs.get("/:id", async (req, res) => {

@@ -4,7 +4,7 @@ import { JobsContext } from "../../Contexts/JobsContext";
 
 
 import JobInfo from './JobInfo';
-import JobEdit from './JobEdit';
+import JobEdit from './jobEdit/JobEdit';
 import Comments from '../Comments/Comments';
 
 

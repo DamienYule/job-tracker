@@ -1,9 +1,26 @@
 const express = require("express");
 const users = express.Router();
-const {getAllUsers,createUser}= require('../queries/usersQuery') 
+const { getAllUsers, createUser, fetchUser, updateUser } = require('../queries/usersQuery')
 
-users.get("/",getAllUsers )
-users.post("/",createUser)
+users.get("/", async (req, res) => {
+    const allUsers = await getAllUsers();
+    res.json(allUsers)
+})
+users.get("/:id", async (req, res) => {
+    const { id } = req.params;
+    const user = await fetchUser(id);
+    res.json(user);
+})
+users.post("/", async () => {
+    const createdUser = await createUser();
+    res.json(createdUser);
+})
+users.put("/:id", async (req, res) => {
+    const { id } = req.params;
+    // const uid = req.query.uid;
+    const updatedUser = await updateUser(id, req.body);
+    res.json(updatedUser);
+});
 
 module.exports = users
 

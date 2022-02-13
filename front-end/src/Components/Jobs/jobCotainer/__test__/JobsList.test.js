@@ -1,6 +1,6 @@
 import { render} from '@testing-library/react';
-import App from './App';
+import JobsList from '../../JobsList';
 
 it('renders properly', () => {
-  render(<App />)
+  render(<JobsList />)
 })
