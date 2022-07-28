@@ -18,6 +18,7 @@ function JobInfo() {
                 handleClaim()
             }, (error) => {
                 console.log(error.text);
+                handleClaim()
             });
     };
 
